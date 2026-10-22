@@ -172,7 +172,7 @@ html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
 .team-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;align-items:stretch}
 .team-photo{position:relative;min-height:440px;overflow:hidden;border-inline-end:1px solid var(--line)}
 .team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.team-text{padding-inline-start:clamp(1.5rem,4vw,4rem);display:flex;flex-direction:column;justify-content:center}
+.team-text{padding-inline:clamp(1.5rem,4vw,4rem);display:flex;flex-direction:column;justify-content:center}
 .bios{display:flex;flex-direction:column;margin-top:1.8rem}
 .bio{border-top:1px solid var(--line);padding:1.8rem 0}
 .bio:first-child{border-top:0}
@@ -356,7 +356,7 @@ html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
   .tiles.four{grid-template-columns:repeat(2,1fr)}
   .mosaic{grid-template-columns:repeat(2,1fr)}
   .team-photo{min-height:360px;border-inline-end:0;border-bottom:1px solid var(--line)}
-  .team-text{padding-inline-start:0;padding-top:2.5rem}
+  .team-text{padding-inline:1.25rem;padding-top:2.5rem}
   .strip{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:620px){
