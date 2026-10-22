@@ -9,7 +9,7 @@ Text Domain: gera
 
 :root{
   --bg:#0a0a0c; --bg-2:#101014; --panel:#141418;
-  --fg:#f4f4f5; --muted:#a1a1aa; --faint:#71717a;
+  --fg:#f4f4f5; --muted:#a1a1aa; --faint:#8b8b94;
   --line:rgba(255,255,255,.14); --line-2:rgba(255,255,255,.30);
   --amber:#f59e0b; --amber-lo:#fbbf24; --ink:#17120a;
   --display:"IBM Plex Sans Hebrew","Heebo",system-ui,sans-serif;
@@ -34,6 +34,11 @@ body{margin:0;color:var(--fg);font-family:var(--body);font-size:17px;line-height
   background-attachment:fixed}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
+/* accessibility: visible keyboard focus + skip link */
+:focus-visible{outline:3px solid var(--amber-lo);outline-offset:2px}
+#main:focus{outline:none}
+.skip-link{position:fixed;top:0;inset-inline-start:0;z-index:2000;background:var(--amber);color:var(--ink);font-weight:700;padding:.75rem 1.25rem;transform:translateY(-130%);transition:transform .2s ease}
+.skip-link:focus{transform:translateY(0)}
 h1,h2,h3{margin:0;font-family:var(--head);font-weight:800;line-height:1.06;letter-spacing:-.015em}
 p{margin:0}
 .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(20px,4vw,48px)}
@@ -275,8 +280,8 @@ html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
 .fx circle:nth-child(3){stroke-opacity:.28}
 .fx circle:nth-child(4){stroke-opacity:.18}
 .fx circle:nth-child(5){stroke-opacity:.1}
-.fx-a{top:-12vmin;right:-10vmin;opacity:calc(.5 - var(--sp,0) * .4);transform:scale(calc(.7 + var(--sp,0) * .75 + var(--pulse,0) * .22)) rotate(calc(var(--sp,0) * 55deg + var(--pulse,0) * 10deg))}
-.fx-b{bottom:-16vmin;left:-12vmin;width:95vmin;height:95vmin;opacity:calc(.05 + var(--sp,0) * .42);transform:scale(calc(.4 + var(--sp,0) * 1.05 - var(--pulse,0) * .28)) rotate(calc(var(--sp,0) * -45deg - var(--pulse,0) * 10deg))}
+.fx-a{top:-12vmin;right:-10vmin;opacity:calc(.5 - var(--sp,0) * .44);transform:scale(calc(.7 + var(--sp,0) * .9)) rotate(calc(var(--sp,0) * 55deg))}
+.fx-b{bottom:-16vmin;left:-12vmin;width:95vmin;height:95vmin;opacity:calc(.44 - var(--sp,0) * .36);transform:scale(calc(.4 + var(--sp,0) * 1.25)) rotate(calc(var(--sp,0) * -45deg))}
 @media (prefers-reduced-motion: reduce){ .fx-a{opacity:.2;transform:scale(.9)} .fx-b{opacity:.16;transform:scale(.8)} }
 
 /* mobile tuning */
