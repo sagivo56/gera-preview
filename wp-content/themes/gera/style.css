@@ -104,9 +104,11 @@ p{margin:0}
 .mani .r{border-inline-start:1px solid var(--line);padding-inline-start:clamp(1.5rem,3vw,3rem);display:flex;flex-direction:column;justify-content:center}
 .mani .r .q{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:1.2rem}
 .mani .r ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.mani .r li{padding:1rem 0;border-top:1px solid var(--line);font-weight:500;display:flex;align-items:center;gap:.8rem}
+.mani .r li{padding:1rem .2rem;border-top:1px solid var(--line);font-weight:500;display:flex;align-items:center;gap:.8rem;transform-origin:right;transition:transform .3s cubic-bezier(.4,0,.2,1),background-color .3s ease,color .3s ease}
 .mani .r li:first-child{border-top:0}
-.mani .r li b{font-family:var(--mono);color:var(--amber);font-weight:500;font-size:.8rem}
+.mani .r li b{font-family:var(--mono);color:var(--amber);font-weight:500;font-size:.8rem;transition:color .3s ease}
+.mani .r li:hover{transform:scale(1.03);background-color:rgba(245,158,11,.07);color:var(--amber-lo)}
+.mani .r li:hover b{color:var(--amber-lo)}
 
 /* tile rows (expertise / differentiators) — gapless hairline grid */
 .tiles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -116,7 +118,12 @@ p{margin:0}
 
 /* services list (5 full service domains) */
 .svc-list{border-top:1px solid var(--line)}
-.svc{display:flex;gap:1.5rem;padding:1.9rem 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.svc{display:flex;gap:1.5rem;padding:1.9rem 0;border-bottom:1px solid var(--line);align-items:flex-start;transform-origin:right;transition:transform .35s cubic-bezier(.4,0,.2,1),background-color .3s ease,box-shadow .3s ease}
+.svc:hover{transform:scale(1.014);background-color:rgba(245,158,11,.06);box-shadow:inset -3px 0 0 var(--amber)}
+html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
+.svc .svc-ic,.svc .svc-body h3{transition:color .3s ease,border-color .3s ease}
+.svc:hover .svc-ic{border-color:var(--amber);color:var(--amber-lo)}
+.svc:hover .svc-body h3{color:var(--amber-lo)}
 .svc-ic{flex:none;width:50px;height:50px;display:grid;place-items:center;border:1px solid var(--line-2);color:var(--amber)}
 .svc-body{min-width:0}
 .svc-k{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-lo);margin-bottom:.5rem}
@@ -148,9 +155,9 @@ p{margin:0}
 /* projects — gapless image mosaic */
 .mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
 .proj{position:relative;aspect-ratio:4/3;overflow:hidden;display:flex;align-items:flex-end;border-inline-start:1px solid var(--line);border-bottom:1px solid var(--line)}
-.proj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;transition:transform .7s ease,filter .4s}
+.proj img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:grayscale(1) brightness(.95);transition:transform .7s ease,filter .5s ease}
 .proj::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(8,8,10,.94),rgba(8,8,10,.3) 55%,rgba(8,8,10,.05))}
-.proj:hover img{transform:scale(1.06)}
+.proj:hover img{transform:scale(1.06);filter:none}
 .proj-halo{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;transition:opacity .4s;mix-blend-mode:screen;background:radial-gradient(circle 130px at var(--mx,50%) var(--my,50%),rgba(245,158,11,.5),rgba(245,158,11,.12) 42%,transparent 70%)}
 .proj:hover .proj-halo,.team-photo:hover .proj-halo{opacity:1}
 .proj .body{position:relative;z-index:2;padding:1.6rem 1.7rem;width:100%}
