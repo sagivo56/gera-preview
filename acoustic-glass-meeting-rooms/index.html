@@ -65,6 +65,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   </svg>
 </div>
 
+<div class="side-orb" aria-hidden="true">
+  <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.1">
+    <circle cx="100" cy="100" r="97"/><circle cx="100" cy="100" r="66"/>
+    <circle class="disc" cx="100" cy="100" r="38" fill="currentColor" stroke="none"/>
+  </svg>
+</div>
+
 <div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
 
 <header class="site-header" id="siteHeader">
@@ -150,16 +157,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <p>מתלבטים בין חומרי בידוד אקוסטי לחומרי בליעה אקוסטית? מדריך חובה ליזמים, אדריכלים ומנהלי פרויקטים המסביר את המושגים STC, NRC ורעש&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
-                  <a class="bcard" href="../when-to-hire-acoustic-consultant/index.html">
+                  <a class="bcard" href="../hotel-acoustics-multimedia/index.html">
             <span class="bcat">מאמר</span>
-            <h3>מתי חייבים לשלב יועץ אקוסטיקה ויועץ מולטימדיה בפרויקט? (ולמה שלב הגמר מאוחר מדי)</h3>
-            <p>מתי הזמן הנכון לצרף יועץ אקוסטיקה ויועץ מולטימדיה לצוות התכנון? מדריך ליזמים ואדריכלים החושף איך תכנון מוקדם חוסך מאות אלפי&hellip;</p>
+            <h3>תכנון אקוסטי ומערכות מולטימדיה לבתי מלון – איך מונעים תלונות אורחים על רעש?</h3>
+            <p>עם ניסיון בתכנון מלונות יוקרה כמו אלמא, W Jaffa ובראשית – גרא יועצים חושפים את סודות התכנון האקוסטי ומערכות המולטימדיה&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
-                  <a class="bcard" href="../open-space-office-acoustics/index.html">
+                  <a class="bcard" href="../auditorium-sound-design/index.html">
             <span class="bcat">מאמר</span>
-            <h3>רעש ב-Open Space ופגיעה בריכוז עובדים – פתרונות אקוסטיים מוכחים למשרדים</h3>
-            <p>עובדים מתלוננים על רעש וחוסר ריכוז ב-Open Space? גלו את השיטות ההנדסיות של גרא יועצים לשיפור האקוסטיקה במשרדי הייטק, מוקדי&hellip;</p>
+            <h3>תכנון אקוסטי ומערכות הגברה לאודיטוריומים ואולמות כנסים – סאונד אחיד בכל מושב</h3>
+            <p>מתכננים אודיטוריום, אולם מופעים או מרכז כנסים? הכירו את עקרונות התכנון האקוסטי ומערכות ההגברה וההקרנה של גרא יועצים להשגת חוויית&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
               </div>
@@ -217,6 +224,21 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       var i = sibs.indexOf(el);
       if (i > 0) el.style.transitionDelay = Math.min(i, 6) * 0.06 + 's';
       io.observe(el);
+    });
+  })();
+</script>
+
+<script>
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var cards = document.querySelectorAll('.mosaic .proj, .team-photo');
+    cards.forEach(function(c){
+      var h = document.createElement('span'); h.className = 'proj-halo'; c.appendChild(h);
+      c.addEventListener('pointermove', function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+        c.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+      }, {passive:true});
     });
   })();
 </script>

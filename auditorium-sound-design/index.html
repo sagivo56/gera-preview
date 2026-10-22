@@ -65,6 +65,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   </svg>
 </div>
 
+<div class="side-orb" aria-hidden="true">
+  <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.1">
+    <circle cx="100" cy="100" r="97"/><circle cx="100" cy="100" r="66"/>
+    <circle class="disc" cx="100" cy="100" r="38" fill="currentColor" stroke="none"/>
+  </svg>
+</div>
+
 <div class="progress" aria-hidden="true"><span id="progressFill"></span></div>
 
 <header class="site-header" id="siteHeader">
@@ -109,22 +116,22 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="related">
       <h2 class="related-title">מאמרים נוספים</h2>
       <div class="blog-grid">
-                  <a class="bcard" href="../open-space-office-acoustics/index.html">
+                  <a class="bcard" href="../independent-av-consultant/index.html">
             <span class="bcat">מאמר</span>
-            <h3>רעש ב-Open Space ופגיעה בריכוז עובדים – פתרונות אקוסטיים מוכחים למשרדים</h3>
-            <p>עובדים מתלוננים על רעש וחוסר ריכוז ב-Open Space? גלו את השיטות ההנדסיות של גרא יועצים לשיפור האקוסטיקה במשרדי הייטק, מוקדי&hellip;</p>
-            <span class="bmore">קראו עוד ←</span>
-          </a>
-                  <a class="bcard" href="../sound-insulation-stc-vs-nrc/index.html">
-            <span class="bcat">מאמר</span>
-            <h3>ההבדל הקריטי בין בידוד אקוסטי (STC) לבליעה אקוסטית (NRC) – המדריך ליזמים ואדריכלים</h3>
-            <p>מתלבטים בין חומרי בידוד אקוסטי לחומרי בליעה אקוסטית? מדריך חובה ליזמים, אדריכלים ומנהלי פרויקטים המסביר את המושגים STC, NRC ורעש&hellip;</p>
+            <h3>יועץ מולטימדיה בלתי תלוי מול חברת אינטגרציה – למה &#8220;ייעוץ חינם&#8221; עולה לכם ביוקר?</h3>
+            <p>למה יזמים וחברות מפסידים מאות אלפי שקלים כשהם מוותרים על יועץ מולטימדיה עצמאי? גלו את ההבדל בין ייעוץ אובייקטיבי וכתיבת&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
                   <a class="bcard" href="../av-over-ip-dante/index.html">
             <span class="bcat">מאמר</span>
             <h3>מה זה AV over IP ו-Dante? המדריך להעברת אודיו ווידאו על רשתות תקשורת מודרניות</h3>
             <p>מהם פרוטוקולי AV over IP ו-Dante ואיך הם מחליפים את מטריצות הווידאו והכבילה הישנה? מדריך טכנולוגי של גרא יועצים למנהלי&hellip;</p>
+            <span class="bmore">קראו עוד ←</span>
+          </a>
+                  <a class="bcard" href="../av-tender-boq/index.html">
+            <span class="bcat">מאמר</span>
+            <h3>איך כותבים מכרז מולטימדיה וכתב כמויות חסין מניפולציות? 7 טעויות יקרות</h3>
+            <p>עומדים לפני פרסום מכרז מערכות מולטימדיה ואודיו-וידאו? הכירו את 7 הטעויות במפרטי מכרז שגורמות לחריגות תקציב ולציוד ירוד – ואיך&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
               </div>
@@ -182,6 +189,21 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       var i = sibs.indexOf(el);
       if (i > 0) el.style.transitionDelay = Math.min(i, 6) * 0.06 + 's';
       io.observe(el);
+    });
+  })();
+</script>
+
+<script>
+  (function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var cards = document.querySelectorAll('.mosaic .proj, .team-photo');
+    cards.forEach(function(c){
+      var h = document.createElement('span'); h.className = 'proj-halo'; c.appendChild(h);
+      c.addEventListener('pointermove', function(e){
+        var r = c.getBoundingClientRect();
+        c.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+        c.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+      }, {passive:true});
     });
   })();
 </script>
