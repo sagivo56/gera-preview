@@ -52,13 +52,26 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta name="generator" content="WordPress 7.1.3" />
 <link rel="canonical" href="index.html" />
 <link rel='shortlink' href='../index.html' />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CVFRKNZSG5"></script>
+<!-- Google Analytics 4 — loaded only after cookie consent -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CVFRKNZSG5');
+(function(){
+  window.GERA_GA_ID = 'G-CVFRKNZSG5';
+  window.geraLoadGA = function(){
+    if ( window.__geraGA ) { return; }
+    window.__geraGA = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GERA_GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', window.GERA_GA_ID);
+  };
+  try {
+    if ( localStorage.getItem('gera_cookie_consent') === 'accepted' ) { window.geraLoadGA(); }
+  } catch (e) {}
+})();
 </script>
 	<script>document.documentElement.classList.add('js');</script>
 </head>
@@ -125,22 +138,22 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <div class="related">
       <h2 class="related-title">מאמרים נוספים</h2>
       <div class="blog-grid">
-                  <a class="bcard" href="../open-space-office-acoustics/index.html">
+                  <a class="bcard" href="../acoustic-glass-meeting-rooms/index.html">
             <span class="bcat">מאמר</span>
-            <h3>רעש ב-Open Space ופגיעה בריכוז עובדים – פתרונות אקוסטיים מוכחים למשרדים</h3>
-            <p>עובדים מתלוננים על רעש וחוסר ריכוז ב-Open Space? גלו את השיטות ההנדסיות של גרא יועצים לשיפור האקוסטיקה במשרדי הייטק, מוקדי&hellip;</p>
-            <span class="bmore">קראו עוד ←</span>
-          </a>
-                  <a class="bcard" href="../av-tender-boq/index.html">
-            <span class="bcat">מאמר</span>
-            <h3>איך כותבים מכרז מולטימדיה וכתב כמויות חסין מניפולציות? 7 טעויות יקרות</h3>
-            <p>עומדים לפני פרסום מכרז מערכות מולטימדיה ואודיו-וידאו? הכירו את 7 הטעויות במפרטי מכרז שגורמות לחריגות תקציב ולציוד ירוד – ואיך&hellip;</p>
+            <h3>הדהוד וזליגת רעש בחדרי ישיבות שקופים (קירות זכוכית) – איך פותרים בלי לפגוע בעיצוב?</h3>
+            <p>סובלים מהדהוד בשיחות זום או מזליגת שיחות סודיות מחדר הישיבות למשרד? המדריך המלא של גרא יועצים לבידוד אקוסטי וטיפול בהדהוד&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
                   <a class="bcard" href="../independent-av-consultant/index.html">
             <span class="bcat">מאמר</span>
             <h3>יועץ מולטימדיה בלתי תלוי מול חברת אינטגרציה – למה &#8220;ייעוץ חינם&#8221; עולה לכם ביוקר?</h3>
             <p>למה יזמים וחברות מפסידים מאות אלפי שקלים כשהם מוותרים על יועץ מולטימדיה עצמאי? גלו את ההבדל בין ייעוץ אובייקטיבי וכתיבת&hellip;</p>
+            <span class="bmore">קראו עוד ←</span>
+          </a>
+                  <a class="bcard" href="../open-space-office-acoustics/index.html">
+            <span class="bcat">מאמר</span>
+            <h3>רעש ב-Open Space ופגיעה בריכוז עובדים – פתרונות אקוסטיים מוכחים למשרדים</h3>
+            <p>עובדים מתלוננים על רעש וחוסר ריכוז ב-Open Space? גלו את השיטות ההנדסיות של גרא יועצים לשיפור האקוסטיקה במשרדי הייטק, מוקדי&hellip;</p>
             <span class="bmore">קראו עוד ←</span>
           </a>
               </div>
@@ -217,6 +230,32 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         c.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
       }, {passive:true});
     });
+  })();
+</script>
+
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="הודעת שימוש בעוגיות" hidden>
+  <div class="wrap cookie-inner">
+    <p class="cookie-text">אנו ב<strong>גרא יועצים</strong> משתמשים בקובצי עוגיות (Cookies) ובכלי מדידה כגון Google Analytics כדי להבטיח את תפקודו התקין של האתר, לשפר את חוויית הגלישה ולנתח את התנועה באתר. לחיצה על "אישור" מהווה הסכמה לשימוש בעוגיות בהתאם ל<a href="../privacy/index.html">מדיניות הפרטיות</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-amber" id="cookieAccept">אישור והמשך גלישה</button>
+      <button type="button" class="btn btn-ghost" id="cookieDecline">עוגיות חיוניות בלבד</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var KEY = 'gera_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    if ( ! banner ) { return; }
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    function hide(){ banner.hidden = true; }
+    function store(v){ try { localStorage.setItem(KEY, v); } catch (e) {} }
+    if ( stored !== 'accepted' && stored !== 'declined' ) { banner.hidden = false; }
+    var accept = document.getElementById('cookieAccept');
+    var decline = document.getElementById('cookieDecline');
+    if ( accept ) { accept.addEventListener('click', function(){ store('accepted'); hide(); if ( window.geraLoadGA ) { window.geraLoadGA(); } }); }
+    if ( decline ) { decline.addEventListener('click', function(){ store('declined'); hide(); }); }
   })();
 </script>
 

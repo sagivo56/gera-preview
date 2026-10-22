@@ -364,6 +364,16 @@ html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
 .legal-table th,.legal-table td{border:1px solid var(--line);padding:.8rem 1rem;text-align:start;vertical-align:top}
 .legal-table th{background:var(--bg-2);color:var(--fg);font-weight:700}
 .legal-table td{color:var(--muted)}
+/* cookie consent banner */
+.cookie-banner{position:fixed;inset-inline:0;bottom:0;z-index:1500;background:var(--panel);border-top:1px solid var(--line-2)}
+.cookie-banner[hidden]{display:none}
+.cookie-inner{display:flex;align-items:center;gap:1.4rem;padding-block:1.1rem;flex-wrap:wrap}
+.cookie-text{color:var(--muted);font-size:.9rem;line-height:1.6;margin:0;flex:1 1 320px}
+.cookie-text a{color:var(--amber-lo);text-decoration:underline;text-underline-offset:3px}
+.cookie-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.cookie-banner button{font:inherit;cursor:pointer}
+.cookie-actions .btn{padding:.7em 1.2em;font-size:.82rem}
+@media (max-width:620px){ .cookie-actions{width:100%} .cookie-actions .btn{flex:1} }
 
 @media (max-width:1000px){
   .mani,.team-grid,.contact-grid{grid-template-columns:1fr}

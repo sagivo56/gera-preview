@@ -50,13 +50,26 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <meta name="generator" content="WordPress 7.1.3" />
 <link rel="canonical" href="index.html" />
 <link rel='shortlink' href='../index.html' />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CVFRKNZSG5"></script>
+<!-- Google Analytics 4 — loaded only after cookie consent -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CVFRKNZSG5');
+(function(){
+  window.GERA_GA_ID = 'G-CVFRKNZSG5';
+  window.geraLoadGA = function(){
+    if ( window.__geraGA ) { return; }
+    window.__geraGA = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GERA_GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', window.GERA_GA_ID);
+  };
+  try {
+    if ( localStorage.getItem('gera_cookie_consent') === 'accepted' ) { window.geraLoadGA(); }
+  } catch (e) {}
+})();
 </script>
 	<script>document.documentElement.classList.add('js');</script>
 </head>
@@ -276,6 +289,32 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         c.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
       }, {passive:true});
     });
+  })();
+</script>
+
+<div class="cookie-banner" id="cookieBanner" role="region" aria-label="הודעת שימוש בעוגיות" hidden>
+  <div class="wrap cookie-inner">
+    <p class="cookie-text">אנו ב<strong>גרא יועצים</strong> משתמשים בקובצי עוגיות (Cookies) ובכלי מדידה כגון Google Analytics כדי להבטיח את תפקודו התקין של האתר, לשפר את חוויית הגלישה ולנתח את התנועה באתר. לחיצה על "אישור" מהווה הסכמה לשימוש בעוגיות בהתאם ל<a href="index.html">מדיניות הפרטיות</a>.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn btn-amber" id="cookieAccept">אישור והמשך גלישה</button>
+      <button type="button" class="btn btn-ghost" id="cookieDecline">עוגיות חיוניות בלבד</button>
+    </div>
+  </div>
+</div>
+<script>
+  (function(){
+    var KEY = 'gera_cookie_consent';
+    var banner = document.getElementById('cookieBanner');
+    if ( ! banner ) { return; }
+    var stored = null;
+    try { stored = localStorage.getItem(KEY); } catch (e) {}
+    function hide(){ banner.hidden = true; }
+    function store(v){ try { localStorage.setItem(KEY, v); } catch (e) {} }
+    if ( stored !== 'accepted' && stored !== 'declined' ) { banner.hidden = false; }
+    var accept = document.getElementById('cookieAccept');
+    var decline = document.getElementById('cookieDecline');
+    if ( accept ) { accept.addEventListener('click', function(){ store('accepted'); hide(); if ( window.geraLoadGA ) { window.geraLoadGA(); } }); }
+    if ( decline ) { decline.addEventListener('click', function(){ store('declined'); hide(); }); }
   })();
 </script>
 
