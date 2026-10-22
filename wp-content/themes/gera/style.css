@@ -354,9 +354,16 @@ html.js .svc.reveal-in:hover{transform:scale(1.014) !important}
 .site-footer{border-top:1px solid var(--line);padding-block:2.4rem}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
 .site-footer small{color:var(--faint);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em}
-.footer-legal{margin-top:.4rem}
+.footer-legal{margin-top:.5rem;display:flex;flex-wrap:wrap;gap:.6rem 1.3rem}
 .footer-legal a{color:var(--muted);font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-decoration:underline;text-underline-offset:3px;transition:color .2s}
 .footer-legal a:hover{color:var(--amber-lo)}
+/* legal pages */
+.legal-updated{color:var(--muted);font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;margin-bottom:1.6rem}
+.legal-table-wrap{overflow-x:auto;margin:1.3rem 0}
+.legal-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.legal-table th,.legal-table td{border:1px solid var(--line);padding:.8rem 1rem;text-align:start;vertical-align:top}
+.legal-table th{background:var(--bg-2);color:var(--fg);font-weight:700}
+.legal-table td{color:var(--muted)}
 
 @media (max-width:1000px){
   .mani,.team-grid,.contact-grid{grid-template-columns:1fr}
