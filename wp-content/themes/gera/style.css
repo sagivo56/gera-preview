@@ -270,10 +270,7 @@ p{margin:0}
 .fx circle:nth-child(5){stroke-opacity:.1}
 .fx-a{top:-12vmin;right:-10vmin;opacity:calc(.5 - var(--sp,0) * .4);transform:scale(calc(.7 + var(--sp,0) * .75 + var(--pulse,0) * .22)) rotate(calc(var(--sp,0) * 55deg + var(--pulse,0) * 10deg))}
 .fx-b{bottom:-16vmin;left:-12vmin;width:95vmin;height:95vmin;opacity:calc(.05 + var(--sp,0) * .42);transform:scale(calc(.4 + var(--sp,0) * 1.05 - var(--pulse,0) * .28)) rotate(calc(var(--sp,0) * -45deg - var(--pulse,0) * 10deg))}
-.side-orb{position:fixed;z-index:-1;right:-26vmin;top:50%;width:54vmin;height:54vmin;color:var(--amber);pointer-events:none;transform:translateY(calc(-50% + (.5 - var(--sp,0)) * 42vmin)) scale(calc(.75 + var(--sp,0) * .6 + var(--pulse,0) * .06));opacity:calc(.12 + var(--sp,0) * .34)}
-.side-orb svg{width:100%;height:100%;display:block}
-.side-orb .disc{opacity:calc(var(--sp,0) * .5)}
-@media (prefers-reduced-motion: reduce){ .fx-a{opacity:.2;transform:scale(.9)} .fx-b{opacity:.16;transform:scale(.8)} .side-orb{opacity:.18;transform:translateY(-50%) scale(1)} }
+@media (prefers-reduced-motion: reduce){ .fx-a{opacity:.2;transform:scale(.9)} .fx-b{opacity:.16;transform:scale(.8)} }
 
 /* mobile tuning */
 @media (max-width:620px){
